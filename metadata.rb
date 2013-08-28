@@ -1,7 +1,7 @@
 name             'chef-freetds'
 maintainer       'Olivier Brisse'
-maintainer_email 'ouranos@donarproject.org'
-license          'All rights reserved'
+maintainer_email 'obrisse@aioinissaydowa.com.au'
+license          'Apache 2.0'
 description      'Installs/Configures FreeTDS'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
