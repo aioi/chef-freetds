@@ -23,7 +23,8 @@ If you want to configure some server add them to your node's attributes:
         'description' => 'A typical Microsoft server',
         'host'=> 'ntmachine.domain.com',
         'port' => 1433,
-        'tds_version' => '7.0'
+        'tds_version' => '7.0',
+        'text_size' => 1024
       }
     ]
 
