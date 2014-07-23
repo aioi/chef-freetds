@@ -3,13 +3,13 @@
 # Recipe:: default
 #
 # Copyright (C) 2013 Olivier Brisse
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #    http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,7 +30,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/freetds-#{version}.tar.gz" do
   checksum node['freetds']['checksum'] if node['freetds']['checksum']
 end
 
-bash "build freetds" do
+bash 'build freetds' do
   cwd Chef::Config[:file_cache_path]
   code <<-EOF
     tar zxf freetds-#{version}.tar.gz
@@ -40,8 +40,8 @@ bash "build freetds" do
   not_if 'which tsql'
 end
 
-template "/usr/local/etc/freetds.conf" do
-  source "freetds.conf.erb"
+template '/usr/local/etc/freetds.conf' do
+  source 'freetds.conf.erb'
   owner 'root'
   group 'root'
   mode '0644'
