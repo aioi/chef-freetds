@@ -1,6 +1,8 @@
 Description
 ===========
 
+[![Build Status](https://travis-ci.org/aioi/chef-freetds.png?branch=master)](https://travis-ci.org/aioi/chef-freetds)
+
 This cookbook install and configure FreeTDS
 
 Platform
