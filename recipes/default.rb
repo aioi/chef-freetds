@@ -25,8 +25,10 @@ configure_options = "--with-tdsver=#{node['freetds']['tds_version']} #{'--disabl
 
 if platform?("ubuntu")
   # ubuntu: just install as package
-  apt_package "freetds-bin freetds-common freetds-dev libct4 libsybdb5" do
-    action :install
+  %w{freetds-bin freetds-common freetds-dev libct4 libsybdb5}.each do |pkg|
+    package pkg do
+      action :install
+    end
   end
 else
   # other distros: get and build from sources
