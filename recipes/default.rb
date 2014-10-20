@@ -24,12 +24,12 @@ freetds_url = node['freetds']['url'] ||
 configure_options = "--with-tdsver=#{node['freetds']['tds_version']} #{'--disable-odbc' unless node['freetds']['odbc']}"
 
 if platform?("ubuntu")
-  # just install as package
+  # ubuntu: just install as package
   apt_package "freetds-bin freetds-common freetds-dev libct4 libsybdb5" do
     action :install
   end
 else
-  # get and build from sources
+  # other distros: get and build from sources
   remote_file "#{Chef::Config[:file_cache_path]}/freetds-#{version}.tar.gz" do
     action :create_if_missing
     backup false
