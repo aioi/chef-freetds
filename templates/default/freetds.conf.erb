@@ -10,7 +10,7 @@
 # server specific section
 [global]
         # TDS protocol version
-	tds version = <% @node['freetds']['tds_version'] %>
+	tds version = <%= @node['freetds']['tds_version'] %>
 
 	# Whether to write a TDSDUMP file for diagnostic purposes
 	# (setting this to /tmp is insecure on a multi-user system)
@@ -24,9 +24,9 @@
 	# If you get out-of-memory errors, it may mean that your client
 	# is trying to allocate a huge buffer for a TEXT field.  
 	# Try setting 'text size' to a more reasonable limit 
-	text size = <% @node['freetds']['text_size'] %>
+	text size = <%= @node['freetds']['text_size'] %>
 
-	client charset = <% @node['freetds']['client_charset'] %>
+	client charset = <%= @node['freetds']['client_charset'] %>
 
 # A typical Sybase server
 [egServer50]
