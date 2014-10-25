@@ -22,17 +22,16 @@ version = node['freetds']['version']
 freetds_url = node['freetds']['url'] ||
   "http://mirrors.ibiblio.org/freetds/stable/freetds-#{version}.tar.gz"
 configure_options = "--with-tdsver=#{node['freetds']['tds_version']} #{'--disable-odbc' unless node['freetds']['odbc']}"
-conf_path = '/usr/local/etc/freetds.conf';
+conf_path = '/usr/local/etc/freetds.conf'
 
-
-if platform?("ubuntu")
+if platform?('ubuntu')
   # ubuntu: just install as package
-  %w{freetds-bin freetds-common freetds-dev libct4 libsybdb5}.each do |pkg|
+  %w(freetds-bin freetds-common freetds-dev libct4 libsybdb5).each do |pkg|
     package pkg do
       action :install
     end
   end
-  conf_path = "/etc/freetds/freetds.conf"
+  conf_path = '/etc/freetds/freetds.conf'
 else
   # other distros: get and build from sources
   remote_file "#{Chef::Config[:file_cache_path]}/freetds-#{version}.tar.gz" do
