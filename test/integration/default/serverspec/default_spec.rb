@@ -1,4 +1,6 @@
-require 'spec_helper'
+require 'serverspec'
+
+set :backend, :exec
 
 describe 'freetds::default' do
   describe file('/usr/local/etc/freetds.conf') do
@@ -6,13 +8,13 @@ describe 'freetds::default' do
   end
 
   describe command('which tsql') do
-    it { should return_stdout '/usr/local/bin/tsql' }
-    it { should return_exit_status 0 }
+    its(:stdout) { should match '/usr/local/bin/tsql' }
+    its(:exit_status) { should eq 0 }
   end
 
   describe command('tsql -C') do
     its(:stdout) { should match 'Version: freetds v0.91' }
     its(:stdout) { should match 'TDS version: 7.1' }
-    it { should return_exit_status 0 }
+    its(:exit_status) { should eq 0 }
   end
 end
