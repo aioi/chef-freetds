@@ -18,7 +18,7 @@
 #
 
 default['freetds']['version']     = '0.91'
-default['freetds']['checksum']    = 'b14db5823980a32f0643d1a84d3ec3ad'
+default['freetds']['checksum']    = '6a8148bd803aebceac6862b0dead1c5d9659f7e1038993abfe0ce8febb322465'
 default['freetds']['tds_version'] = '7.1'
 default['freetds']['odbc']        = false
 default['freetds']['text_size']   = false
