@@ -21,9 +21,16 @@ default['freetds']['version']     = '0.91'
 default['freetds']['checksum']    = '6a8148bd803aebceac6862b0dead1c5d9659f7e1038993abfe0ce8febb322465'
 default['freetds']['tds_version'] = '7.1'
 default['freetds']['odbc']        = false
-default['freetds']['text_size']   = false
+default['freetds']['text_size']   = 64_512
 
 default['freetds']['servers'] = [
+  {
+    'name' => 'egServer50',
+    'description' => 'A typical Sybase server',
+    'host' => 'symachine.domain.com',
+    'port' => 5000,
+    'tds_version' => '5.0'
+  },
   {
     'name' => 'egServer70',
     'description' => 'A typical Microsoft server',

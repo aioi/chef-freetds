@@ -24,15 +24,9 @@
 	# If you get out-of-memory errors, it may mean that your client
 	# is trying to allocate a huge buffer for a TEXT field.  
 	# Try setting 'text size' to a more reasonable limit 
-	text size = 64512
-
-# A typical Sybase server
-[egServer50]
-	host = symachine.domain.com
-	port = 5000
-	tds version = 5.0
-
+	text size = <%= node['freetds']['text_size'] %>
 <% @node['freetds']['servers'].each do |server|%>
+
 <% if server['description']%>
 # <%= server['description']%>
 <% end %>
