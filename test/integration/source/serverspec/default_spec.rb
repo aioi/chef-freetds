@@ -1,6 +1,7 @@
 require 'serverspec'
 
 set :backend, :exec
+set :path, '/usr/local/bin:$PATH'
 
 describe 'freetds::default' do
   describe file('/usr/local/etc/freetds.conf') do

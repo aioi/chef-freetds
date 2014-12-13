@@ -8,8 +8,9 @@ This cookbook install and configure FreeTDS
 Platform
 --------
 
-* Debian
-* Ubuntu
+* CentOS (tested on 6.6 - source only)
+* Debian (tested on 7.4)
+* Ubuntu (tested on 12.04 and 14.04)
 
 May work with or without modification on other distributions.
 
