@@ -10,6 +10,7 @@ version          '0.1.4'
   supports os
 end
 
+depends 'apt'
 depends 'build-essential'
 
 attribute 'version',

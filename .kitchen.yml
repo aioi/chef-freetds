@@ -14,4 +14,9 @@ suites:
   - name: default
     run_list:
       - recipe[freetds::default]
+  - name: source
+    run_list:
+      - recipe[freetds::default]
     attributes:
+      freetds:
+        install_method: source

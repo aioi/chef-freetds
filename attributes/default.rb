@@ -17,11 +17,20 @@
 # limitations under the License.
 #
 
-default['freetds']['version']     = '0.91'
-default['freetds']['checksum']    = '6a8148bd803aebceac6862b0dead1c5d9659f7e1038993abfe0ce8febb322465'
-default['freetds']['tds_version'] = '7.1'
-default['freetds']['odbc']        = false
-default['freetds']['text_size']   = 64_512
+default['freetds']['install_method'] = 'package'
+default['freetds']['version']        = '0.91'
+default['freetds']['checksum']       = '6a8148bd803aebceac6862b0dead1c5d9659f7e1038993abfe0ce8febb322465'
+default['freetds']['packages']       = %w(freetds-bin freetds-dev)
+default['freetds']['tds_version']    = '7.1'
+default['freetds']['odbc']           = false
+default['freetds']['text_size']      = 64_512
+
+case node['freetds']['install_method']
+when 'package'
+  default['freetds']['dir']          = '/etc/freetds'
+when 'source'
+  default['freetds']['dir']          = '/usr/local/etc'
+end
 
 default['freetds']['servers'] = [
   {

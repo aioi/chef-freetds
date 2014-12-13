@@ -1,8 +1,8 @@
 #
 # Cookbook Name:: freetds
-# Recipe:: default
+# Recipe:: package
 #
-# Copyright (C) 2013 Olivier Brisse
+# Copyright (C) 2014 Olivier Brisse
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +17,13 @@
 # limitations under the License.
 #
 
-include_recipe "freetds::#{node['freetds']['install_method']}"
+case node['platform_family']
+when 'debian'
+  include_recipe 'apt::default'
 
-template File.join(node['freetds']['dir'], 'freetds.conf') do
-  source 'freetds.conf.erb'
-  owner 'root'
-  group 'root'
-  mode '0644'
+  node['freetds']['packages'].each do |pkg|
+    package pkg
+  end
+else
+  fail 'Unsupported plaftorm, use the source install method'
 end
