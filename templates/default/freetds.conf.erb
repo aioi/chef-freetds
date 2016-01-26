@@ -1,10 +1,10 @@
 #   $Id: freetds.conf,v 1.12 2007/12/25 06:02:36 jklowden Exp $
 #
-# This file is installed by FreeTDS if no file by the same 
-# name is found in the installation directory.  
+# This file is installed by FreeTDS if no file by the same
+# name is found in the installation directory.
 #
-# For information about the layout of this file and its settings, 
-# see the freetds.conf manpage "man freetds.conf".  
+# For information about the layout of this file and its settings,
+# see the freetds.conf manpage "man freetds.conf".
 
 # Global settings are overridden by those in a database
 # server specific section
@@ -20,10 +20,10 @@
 	# Command and connection timeouts
 ;	timeout = 10
 ;	connect timeout = 10
-	
+
 	# If you get out-of-memory errors, it may mean that your client
-	# is trying to allocate a huge buffer for a TEXT field.  
-	# Try setting 'text size' to a more reasonable limit 
+	# is trying to allocate a huge buffer for a TEXT field.
+	# Try setting 'text size' to a more reasonable limit
 	text size = <%= node['freetds']['text_size'] %>
 <% @node['freetds']['servers'].each do |server|%>
 
@@ -33,10 +33,13 @@
 [<%= server['name']%>]
 	host = <%= server['host'] %>
 	port = <%= server['port'] || 1433 %>
-<% if server['tds_version'] %>  
+<% if server['tds_version'] %>
 	tds version = <%= server['tds_version'] %>
 <% end %>
 <% if server['text_size'] %>
 	text size = <%= server['text_size'] %>
+<% end %>
+<% if server['client_charset'] %>
+	client charset = <%= server['client_charset'] %>
 <% end %>
 <% end %>
