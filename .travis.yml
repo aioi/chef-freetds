@@ -5,4 +5,5 @@ script:
   - bundle exec rubocop
 rvm:
   - 1.9.3
-  - 2.1.5
+  - 2.1
+  - 2.2
