@@ -7,7 +7,7 @@ end
 gem 'berkshelf', '~> 3.3.0'
 
 group :lint do
-  gem 'foodcritic', '~> 3.0'
+  gem 'foodcritic', '~> 4.0'
   gem 'rubocop',    '~> 0.19.1'
 end
 
