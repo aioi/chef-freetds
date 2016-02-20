@@ -24,6 +24,7 @@ default['freetds']['packages']       = %w(freetds-bin freetds-dev)
 default['freetds']['tds_version']    = '7.1'
 default['freetds']['odbc']           = false
 default['freetds']['text_size']      = 64_512
+default['freetds']['client_charset'] = nil
 
 case node['freetds']['install_method']
 when 'package'
@@ -45,6 +46,7 @@ default['freetds']['servers'] = [
     'description' => 'A typical Microsoft server',
     'host' => 'ntmachine.domain.com',
     'port' => 1433,
-    'tds_version' => '7.0'
+    'tds_version' => '7.0',
+    'client_charset' => 'UTF-8'
   }
 ]
