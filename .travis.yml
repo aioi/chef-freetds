@@ -4,6 +4,8 @@ script:
   - bundle exec foodcritic -f any .
   - bundle exec rubocop
 rvm:
-  - 1.9.3
+  - 1.9
+  - 2.0
   - 2.1
   - 2.2
+  - 2.3
