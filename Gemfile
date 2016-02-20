@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf', '~> 3.1.3'
+if RUBY_VERSION =~ /^1\.9\..*/
+  gem 'varia_model', '~> 0.4.0' # Workaround for berkshelf/berkshelf#1464
+end
+
+gem 'berkshelf', '~> 3.3.0'
 
 group :lint do
-  gem 'foodcritic', '~> 3.0'
-  gem 'rubocop',    '~> 0.19.1'
+  gem 'foodcritic', '~> 4.0'
+  gem 'rubocop',    '~> 0.37.2'
 end
 
 group :integration do

@@ -25,5 +25,5 @@ when 'debian'
     package pkg
   end
 else
-  fail 'Unsupported plaftorm, use the source install method'
+  raise 'Unsupported plaftorm, use the source install method'
 end
