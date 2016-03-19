@@ -19,6 +19,12 @@
 
 include_recipe "freetds::#{node['freetds']['install_method']}"
 
+directory node['freetds']['dir'] do
+  owner 'root'
+  group 'root'
+  recursive true
+end
+
 template File.join(node['freetds']['dir'], 'freetds.conf') do
   source 'freetds.conf.erb'
   owner 'root'
