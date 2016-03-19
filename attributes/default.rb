@@ -18,7 +18,7 @@
 #
 
 default['freetds']['install_method'] = 'package'
-default['freetds']['version']        = '0.95'
+default['freetds']['version']        = '0.95.87'
 default['freetds']['checksum']       = '0762b8947442ca355d85ce8e74752067'
 default['freetds']['packages']       = %w(freetds-bin freetds-dev)
 default['freetds']['tds_version']    = '7.1'
