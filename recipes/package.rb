@@ -24,6 +24,13 @@ when 'debian'
   node['freetds']['packages'].each do |pkg|
     package pkg
   end
+when 'rhel'
+  include_recipe 'yum::default'
+  yum_repository 'freetds' do
+    description "freetds yum repository for RedHat"
+    baseurl node['freetds']['url']
+    action :create
+  end
 else
   raise 'Unsupported plaftorm, use the source install method'
 end
