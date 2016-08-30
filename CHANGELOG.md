@@ -4,6 +4,8 @@ This file is used to list changes made in each version of freetds.
 
 ## master (unreleased)
 
+* Add support for client_charset definition [\#3](https://github.com/aioi/chef-freetds/pull/3) ([jakimowicz](https://github.com/jakimowicz))
+* Default to 0.95.87 when compiling from source [\#5](https://github.com/aioi/chef-freetds/pull/5) ([l8nite](https://github.com/l8nite))
 * Update foodcritic (0.4.0) and rubocop (0.37.2)
 * Add Travis CI build on ruby 2.0, 2.2 & 2.3
 
