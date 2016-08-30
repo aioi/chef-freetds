@@ -39,7 +39,8 @@ default['freetds']['servers'] = [
     'description' => 'A typical Sybase server',
     'host' => 'symachine.domain.com',
     'port' => 5000,
-    'tds_version' => '5.0'
+    'tds_version' => '5.0',
+    'encryption' => 'off'
   },
   {
     'name' => 'egServer70',
@@ -47,6 +48,7 @@ default['freetds']['servers'] = [
     'host' => 'ntmachine.domain.com',
     'port' => 1433,
     'tds_version' => '7.0',
-    'client_charset' => 'UTF-8'
+    'client_charset' => 'UTF-8',
+    'encryption' => 'off'
   }
 ]

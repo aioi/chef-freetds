@@ -42,4 +42,7 @@
 <% if server['client_charset'] %>
 	client charset = <%= server['client_charset'] %>
 <% end %>
+<% if server['encryption'] %>
+	encryption = <%= server['encryption'] %>
+<% end %>
 <% end %>
